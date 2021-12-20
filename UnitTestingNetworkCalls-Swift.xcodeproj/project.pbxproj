@@ -13,9 +13,11 @@
 		B3C8BC7E276FB10400BAE810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C8BC7C276FB10400BAE810 /* Main.storyboard */; };
 		B3C8BC80276FB10800BAE810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C8BC7F276FB10800BAE810 /* Assets.xcassets */; };
 		B3C8BC83276FB10800BAE810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C8BC81276FB10800BAE810 /* LaunchScreen.storyboard */; };
-		B3C8BC8E276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC8D276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftTests.swift */; };
+		B3C8BC8E276FB10800BAE810 /* APIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC8D276FB10800BAE810 /* APIRepositoryTests.swift */; };
 		B3C8BC98276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC97276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift */; };
 		B3C8BC9A276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC99276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift */; };
+		B3C8BCB0276FC14E00BAE810 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCAF276FC14E00BAE810 /* APIRepository.swift */; };
+		B3C8BCB22770E82200BAE810 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCB12770E82200BAE810 /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +47,12 @@
 		B3C8BC82276FB10800BAE810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3C8BC84276FB10800BAE810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C8BC89276FB10800BAE810 /* UnitTestingNetworkCalls-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTestingNetworkCalls-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3C8BC8D276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkCalls_SwiftTests.swift; sourceTree = "<group>"; };
+		B3C8BC8D276FB10800BAE810 /* APIRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryTests.swift; sourceTree = "<group>"; };
 		B3C8BC93276FB10800BAE810 /* UnitTestingNetworkCalls-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTestingNetworkCalls-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C8BC97276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkCalls_SwiftUITests.swift; sourceTree = "<group>"; };
 		B3C8BC99276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B3C8BCAF276FC14E00BAE810 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		B3C8BCB12770E82200BAE810 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,11 @@
 		B3C8BC75276FB10400BAE810 /* UnitTestingNetworkCalls-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				B3C8BC76276FB10400BAE810 /* AppDelegate.swift */,
-				B3C8BC78276FB10400BAE810 /* SceneDelegate.swift */,
+				B3C8BCA7276FB1A100BAE810 /* Assets */,
+				B3C8BCA6276FB19400BAE810 /* Delegates */,
+				B3C8BCAF276FC14E00BAE810 /* APIRepository.swift */,
+				B3C8BCB12770E82200BAE810 /* Beer.swift */,
 				B3C8BC7A276FB10400BAE810 /* ViewController.swift */,
-				B3C8BC7C276FB10400BAE810 /* Main.storyboard */,
-				B3C8BC7F276FB10800BAE810 /* Assets.xcassets */,
-				B3C8BC81276FB10800BAE810 /* LaunchScreen.storyboard */,
 				B3C8BC84276FB10800BAE810 /* Info.plist */,
 			);
 			path = "UnitTestingNetworkCalls-Swift";
@@ -113,7 +116,7 @@
 		B3C8BC8C276FB10800BAE810 /* UnitTestingNetworkCalls-SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3C8BC8D276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftTests.swift */,
+				B3C8BC8D276FB10800BAE810 /* APIRepositoryTests.swift */,
 			);
 			path = "UnitTestingNetworkCalls-SwiftTests";
 			sourceTree = "<group>";
@@ -125,6 +128,25 @@
 				B3C8BC99276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift */,
 			);
 			path = "UnitTestingNetworkCalls-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		B3C8BCA6276FB19400BAE810 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B3C8BC76276FB10400BAE810 /* AppDelegate.swift */,
+				B3C8BC78276FB10400BAE810 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B3C8BCA7276FB1A100BAE810 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B3C8BC7F276FB10800BAE810 /* Assets.xcassets */,
+				B3C8BC81276FB10800BAE810 /* LaunchScreen.storyboard */,
+				B3C8BC7C276FB10400BAE810 /* Main.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C8BCB0276FC14E00BAE810 /* APIRepository.swift in Sources */,
 				B3C8BC7B276FB10400BAE810 /* ViewController.swift in Sources */,
+				B3C8BCB22770E82200BAE810 /* Beer.swift in Sources */,
 				B3C8BC77276FB10400BAE810 /* AppDelegate.swift in Sources */,
 				B3C8BC79276FB10400BAE810 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C8BC8E276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftTests.swift in Sources */,
+				B3C8BC8E276FB10800BAE810 /* APIRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDMDLPFU67;
@@ -454,6 +479,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appivate.UnitTestingNetworkCalls-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDMDLPFU67;
@@ -482,6 +509,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appivate.UnitTestingNetworkCalls-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
