@@ -26,7 +26,7 @@ class APIClient: BeerServiceProtocol {
     self.responseQueue = responseQueue
   }
   
-  func getBeer(completion: @escaping ([Beer]?, Error?) -> Void) -> URLSessionDataTask {
+  func getBeer(completion: @escaping ([BeerModel]?, Error?) -> Void) -> URLSessionDataTask {
     let url = URL(string: "beers", relativeTo: baseURL)!
     let task = session.dataTask(with: url) { [weak self] data, response, error in
       guard let self = self else { return }
@@ -39,7 +39,7 @@ class APIClient: BeerServiceProtocol {
       }
       let decoder = JSONDecoder()
       do {
-        let beers = try decoder.decode([Beer].self, from: data)
+        let beers = try decoder.decode([BeerModel].self, from: data)
         self.dispatchResult(models: beers, completion: completion)
       } catch {
         self.dispatchResult(error: error, completion: completion)
