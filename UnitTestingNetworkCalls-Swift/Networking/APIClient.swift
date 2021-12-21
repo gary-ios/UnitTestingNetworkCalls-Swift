@@ -1,5 +1,5 @@
 //
-//  APIRepository.swift
+//  APIClient.swift
 //  UnitTestingNetworkCalls-Swift
 //
 //  Created by Gary Maccabe on 19/12/2021.
@@ -7,21 +7,16 @@
 
 import Foundation
 
-protocol BeerServiceProtocol {
-  func getBeer(completion: @escaping ([Beer]?, Error?) -> Void) -> URLSessionDataTask
-}
-
 class APIClient: BeerServiceProtocol {
   
-  let baseURL: URL
-  let session: URLSession
-  let responseQueue: DispatchQueue?
+  private let baseURL: URL
+  private let session: URLSession
+  private let responseQueue: DispatchQueue?
   
-  static let shared =
-  APIClient(
-    baseURL: URL(string: "https://api.punkapi.com/v2/")!,
+  static let shared = APIClient(baseURL: URL(string: "https://api.punkapi.com/v2/")!,
     session: .shared,
-    responseQueue: .main)
+    responseQueue: .main
+  )
   
   init(baseURL: URL,
        session: URLSession,
