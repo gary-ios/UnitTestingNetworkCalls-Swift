@@ -7,56 +7,34 @@
 
 import Foundation
 
-class APIClient: BeerServiceProtocol {
+class APIClient {
   
-  private let baseURL: URL
-  private let session: URLSession
-  private let responseQueue: DispatchQueue?
+    private let baseURL: URL
+    private let session: URLSession
+    private let responseQueue: DispatchQueue?
   
-  static let shared = APIClient(baseURL: URL(string: "https://api.punkapi.com/v2/")!,
-    session: .shared,
-    responseQueue: .main
-  )
-  
-  init(baseURL: URL,
-       session: URLSession,
-       responseQueue: DispatchQueue?) {
-    self.baseURL = baseURL
-    self.session = session
-    self.responseQueue = responseQueue
-  }
-  
-  func getBeer(completion: @escaping ([BeerModel]?, Error?) -> Void) -> URLSessionDataTask {
-    let url = URL(string: "beers", relativeTo: baseURL)!
-    let task = session.dataTask(with: url) { [weak self] data, response, error in
-      guard let self = self else { return }
-      guard let response = response as? HTTPURLResponse,
-        response.statusCode == 200,
-        error == nil,
-        let data = data else {
-          self.dispatchResult(error: error, completion: completion)
-          return
-      }
-      let decoder = JSONDecoder()
-      do {
-        let beers = try decoder.decode([BeerModel].self, from: data)
-        self.dispatchResult(models: beers, completion: completion)
-      } catch {
-        self.dispatchResult(error: error, completion: completion)
-      }
+    static let shared = APIClient(
+        baseURL: URL(string: "https://api.punkapi.com/v2/")!,
+        session: .shared,
+        responseQueue: .main
+    )
+
+    init(baseURL: URL, session: URLSession, responseQueue: DispatchQueue?) {
+        self.baseURL = baseURL
+        self.session = session
+        self.responseQueue = responseQueue
     }
-    task.resume()
-    return task
-  }
-  
-  private func dispatchResult<Type>(models: Type? = nil, error: Error? = nil, completion: @escaping (Type?, Error?) -> Void) {
-        
-    guard let responseQueue = responseQueue else {
-      completion(models, error)
-      return
+    
+    func getBeerData() async throws -> [BeerModel] {
+        guard let url = URL(string: "beers", relativeTo: baseURL) else { throw FetchError.invalidURL }
+        let (data, _) = try await session.data(from: url)
+        let decoder = JSONDecoder()
+        return try decoder.decode([BeerModel].self, from: data)
     }
-    responseQueue.async {
-      completion(models, error)
-    }
-  }
+}
+
+
+enum FetchError: Error {
+    case invalidURL
+    case missingData
 }

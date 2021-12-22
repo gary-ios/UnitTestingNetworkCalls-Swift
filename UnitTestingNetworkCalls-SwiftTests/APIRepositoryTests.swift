@@ -1,5 +1,5 @@
 //
-//  UnitTestingNetworkCalls_SwiftTests.swift
+//  APIClientTests.swift
 //  UnitTestingNetworkCalls-SwiftTests
 //
 //  Created by Gary Maccabe on 19/12/2021.
@@ -8,16 +8,27 @@
 import XCTest
 @testable import UnitTestingNetworkCalls_Swift
 
-class UnitTestingNetworkCalls_SwiftTests: XCTestCase {
+class APIClientTests: XCTestCase {
+    
+    var baseURL: URL!
+    var mockSession: MockURLSession!
+    var apiClient: APIClient!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        baseURL = URL(string: "")!
+        //mockSession = MockURLSession()
+        apiClient = APIClient(
+            baseURL: baseURL,
+            session: mockSession,
+            responseQueue: nil)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
     
-    
+}
 
+class MockURLSession : URLSession {
+    
 }

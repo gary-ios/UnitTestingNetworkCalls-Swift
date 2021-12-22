@@ -13,10 +13,9 @@ class ViewController: UIViewController {
       
     override func viewDidLoad() {
         super.viewDidLoad()
-      _ = apiRepository.getBeer() { beers, error in
-            if error == nil {
-                print(beers?.map { $0.name } ?? [])
-            }
+        Task {
+            let beers = try await apiRepository.getBeerData()
+            print(beers.map { $0.name })
         }
     }
 }

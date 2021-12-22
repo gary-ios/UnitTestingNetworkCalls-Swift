@@ -111,6 +111,7 @@
 				B3C8BCB5277231F700BAE810 /* Networking */,
 				B3C8BCB62772321D00BAE810 /* Models */,
 				B3C8BC7A276FB10400BAE810 /* ViewController.swift */,
+				B3C8BC84276FB10800BAE810 /* Info.plist */,
 			);
 			path = "UnitTestingNetworkCalls-Swift";
 			sourceTree = "<group>";
@@ -145,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				B3C8BC7F276FB10800BAE810 /* Assets.xcassets */,
-				B3C8BC84276FB10800BAE810 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
