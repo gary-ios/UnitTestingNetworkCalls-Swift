@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIClient {
+class APIClient : BeerServiceProtocol {
   
     private let baseURL: URL
     private let session: URLSession
@@ -28,8 +28,7 @@ class APIClient {
     func getBeerData() async throws -> [BeerModel] {
         guard let url = URL(string: "beers", relativeTo: baseURL) else { throw FetchError.invalidURL }
         let (data, _) = try await session.data(from: url)
-        let decoder = JSONDecoder()
-        return try decoder.decode([BeerModel].self, from: data)
+        return try JSONDecoder().decode([BeerModel].self, from: data)
     }
 }
 

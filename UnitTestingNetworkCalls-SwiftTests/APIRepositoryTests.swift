@@ -11,24 +11,33 @@ import XCTest
 class APIClientTests: XCTestCase {
     
     var baseURL: URL!
-    var mockSession: MockURLSession!
+    var mockSession: URLSession!
     var apiClient: APIClient!
 
     override func setUpWithError() throws {
-        baseURL = URL(string: "")!
-        //mockSession = MockURLSession()
+        baseURL = URL(string: "https:")!
+        mockSession = MockURLSession()
         apiClient = APIClient(
             baseURL: baseURL,
-            session: mockSession,
+            session: .shared,
             responseQueue: nil)
     }
 
     override func tearDownWithError() throws {
-        
+        baseURL = nil
+        mockSession = nil
+        apiClient = nil
+        super.tearDown()
     }
     
+    func test_conformsTo_BeerService() {
+        XCTAssertTrue((apiClient as AnyObject) is BeerServiceProtocol)
+    }
 }
 
 class MockURLSession : URLSession {
     
+    override init() {
+        
+    }
 }

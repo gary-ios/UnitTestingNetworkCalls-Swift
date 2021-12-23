@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BeerServiceProtocol {
-  func getBeer(completion: @escaping ([BeerModel]?, Error?) -> Void) -> URLSessionDataTask
+    func getBeerData() async throws -> [BeerModel] 
 }
