@@ -8,15 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    private var apiRepository = APIClient.shared
-      
+    
+    private let session = NetworkSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let apiRepository = BeerDataManager(session: session)
+        
         Task {
-            let beers = try await apiRepository.getBeerData()
-            print(beers.map { $0.name })
+            let beerList = try await apiRepository.getBeerList()
+            print(beerList.map { $0.name })
         }
     }
 }
-

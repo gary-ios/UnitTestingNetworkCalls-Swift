@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol BeerServiceProtocol {
-    func getBeerData() async throws -> [BeerModel] 
+protocol SessionProtocol {
+  func execute(url: URL?) async throws -> Data
 }

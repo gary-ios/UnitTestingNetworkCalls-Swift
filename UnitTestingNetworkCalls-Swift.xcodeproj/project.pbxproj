@@ -16,9 +16,11 @@
 		B3C8BC8E276FB10800BAE810 /* APIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC8D276FB10800BAE810 /* APIRepositoryTests.swift */; };
 		B3C8BC98276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC97276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift */; };
 		B3C8BC9A276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BC99276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift */; };
-		B3C8BCB0276FC14E00BAE810 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCAF276FC14E00BAE810 /* APIClient.swift */; };
+		B3C8BCB0276FC14E00BAE810 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCAF276FC14E00BAE810 /* NetworkSession.swift */; };
 		B3C8BCB22770E82200BAE810 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCB12770E82200BAE810 /* BeerModel.swift */; };
 		B3C8BCB4277231B500BAE810 /* BeerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCB3277231B500BAE810 /* BeerServiceProtocol.swift */; };
+		B3C8BCB9277BCD0C00BAE810 /* BeerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCB8277BCD0C00BAE810 /* BeerDataManager.swift */; };
+		B3C8BCBB277BCD5800BAE810 /* NetworkErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C8BCBA277BCD5800BAE810 /* NetworkErrorEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +54,11 @@
 		B3C8BC93276FB10800BAE810 /* UnitTestingNetworkCalls-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTestingNetworkCalls-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C8BC97276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkCalls_SwiftUITests.swift; sourceTree = "<group>"; };
 		B3C8BC99276FB10800BAE810 /* UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkCalls_SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B3C8BCAF276FC14E00BAE810 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B3C8BCAF276FC14E00BAE810 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		B3C8BCB12770E82200BAE810 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		B3C8BCB3277231B500BAE810 /* BeerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerServiceProtocol.swift; sourceTree = "<group>"; };
+		B3C8BCB8277BCD0C00BAE810 /* BeerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDataManager.swift; sourceTree = "<group>"; };
+		B3C8BCBA277BCD5800BAE810 /* NetworkErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +157,10 @@
 		B3C8BCB5277231F700BAE810 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B3C8BCAF276FC14E00BAE810 /* APIClient.swift */,
 				B3C8BCB3277231B500BAE810 /* BeerServiceProtocol.swift */,
+				B3C8BCAF276FC14E00BAE810 /* NetworkSession.swift */,
+				B3C8BCB8277BCD0C00BAE810 /* BeerDataManager.swift */,
+				B3C8BCBA277BCD5800BAE810 /* NetworkErrorEnum.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -307,9 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C8BCB0276FC14E00BAE810 /* APIClient.swift in Sources */,
+				B3C8BCB0276FC14E00BAE810 /* NetworkSession.swift in Sources */,
 				B3C8BC7B276FB10400BAE810 /* ViewController.swift in Sources */,
+				B3C8BCBB277BCD5800BAE810 /* NetworkErrorEnum.swift in Sources */,
 				B3C8BCB22770E82200BAE810 /* BeerModel.swift in Sources */,
+				B3C8BCB9277BCD0C00BAE810 /* BeerDataManager.swift in Sources */,
 				B3C8BCB4277231B500BAE810 /* BeerServiceProtocol.swift in Sources */,
 				B3C8BC77276FB10400BAE810 /* AppDelegate.swift in Sources */,
 				B3C8BC79276FB10400BAE810 /* SceneDelegate.swift in Sources */,

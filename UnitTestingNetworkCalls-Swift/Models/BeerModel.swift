@@ -7,6 +7,6 @@
 
 import Foundation
 
-class BeerModel: Codable {
-  let name: String
+struct BeerModel: Codable {
+    let name : String
 }

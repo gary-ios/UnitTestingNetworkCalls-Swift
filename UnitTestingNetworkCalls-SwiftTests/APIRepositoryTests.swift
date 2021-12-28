@@ -1,5 +1,5 @@
 //
-//  APIClientTests.swift
+//  BeerDataManagerTests.swift
 //  UnitTestingNetworkCalls-SwiftTests
 //
 //  Created by Gary Maccabe on 19/12/2021.
@@ -8,36 +8,26 @@
 import XCTest
 @testable import UnitTestingNetworkCalls_Swift
 
-class APIClientTests: XCTestCase {
+class BeerDataManagerTests: XCTestCase {
     
-    var baseURL: URL!
-    var mockSession: URLSession!
-    var apiClient: APIClient!
-
-    override func setUpWithError() throws {
-        baseURL = URL(string: "https:")!
-        mockSession = MockURLSession()
-        apiClient = APIClient(
-            baseURL: baseURL,
-            session: .shared,
-            responseQueue: nil)
-    }
-
-    override func tearDownWithError() throws {
-        baseURL = nil
-        mockSession = nil
-        apiClient = nil
-        super.tearDown()
-    }
-    
-    func test_conformsTo_BeerService() {
-        XCTAssertTrue((apiClient as AnyObject) is BeerServiceProtocol)
+    func test_getBeerList_shouldNotBeEmpty() async throws {
+        let session = NetworkSession()
+        let dataManager = BeerDataManager(session: session)
+        
+        do {
+            let beerList = try await dataManager.getBeerList()
+            XCTAssertTrue(beerList.count > 0, "beer array is empty")
+        } catch {
+            XCTFail("Expected beer data, but failed \(error).")
+        }
     }
 }
 
-class MockURLSession : URLSession {
+class BeerMockNetworkSession: SessionProtocol {
     
-    override init() {
-        
+    func execute(url: URL?) async throws -> Data {
+        guard let url = url else { throw NetworkErrorEnum.invalidURL }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return data
     }
 }
