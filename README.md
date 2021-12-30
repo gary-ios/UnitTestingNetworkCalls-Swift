@@ -2,7 +2,7 @@
 
 Project shows how to unit test asynchronous API calls in Swift using Mocking without using any 3rd party software.
 
-- Swift Storyboard is used (the code can be transferred to a SwiftUI project)
+- Swift UIKit Storyboard is used (the code can be transferred to a SwiftUI project)
 - iOS Deployment Target: 15.2
 - Xcode Version: 13.2
 - Test API: https://api.punkapi.com/v2/beers
