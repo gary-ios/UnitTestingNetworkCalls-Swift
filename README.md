@@ -5,7 +5,7 @@ Project shows how to unit test asynchronous API calls in Swift using Mocking wit
 - Swift Storyboard is used (the code can be transferred to a SwiftUI project)
 - iOS Deployment Target: 15.2
 - Xcode Version: 13.2
-- Test API: "https://api.punkapi.com/v2/beers"
+- Test API: https://api.punkapi.com/v2/beers
 
 In its current state, when the project is run a simple list of data will be visible within the Xcode Command line.
 
