@@ -7,7 +7,7 @@ Project shows how to unit test asynchronous API calls in Swift using Mocking wit
 - Xcode Version: 13.2
 - Test API: https://api.punkapi.com/v2/beers
 
-In its current state, when the project is run a simple list of data will be visible within the Xcode Command line.
+In its current state, when the project is run a simple list of data will be visible within the Xcode log.
 
 Additions that can be made to this project using TDD:
 - Pull and display additional data from the API (currently only the name is displayed).
